@@ -3,6 +3,7 @@ import 'package:surf_practice_magic_ball/core/network/interceptor/interceptor_mi
 
 const accessForAll = '*';
 
+/// Интерцептор для исключения ошибок CORS-а
 class CORSInterceptor implements Interceptor {
   @override
   BaseRequest intercept(BaseRequest request) {

@@ -5,6 +5,7 @@ import 'package:surf_practice_magic_ball/screen/magic_ball_screen/domain/magic_b
 
 part 'app_state.g.dart';
 
+/// Модель объекта состояния приложения
 abstract class AppState implements Built<AppState, AppStateBuilder> {
   AppState._();
 
@@ -12,6 +13,7 @@ abstract class AppState implements Built<AppState, AppStateBuilder> {
     return _$AppState((b) => b..magicBallScreenState = MagicBallScreenState().toBuilder());
   }
 
+  /// Состояние окна магического шара
   MagicBallScreenState get magicBallScreenState;
 
   Map<String, dynamic>? toJson() {
