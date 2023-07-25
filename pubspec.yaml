@@ -6,8 +6,8 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: 3.0.3 # Dart SDK version
-  flutter: 3.10.3 # Flutter SDK version
+  sdk: ">=3.0.0 <4.0.0" # Dart SDK version
+  flutter: ">=3.10.0 <4.0.0" # Flutter SDK version
 
 dependencies:
   flutter:
@@ -15,11 +15,50 @@ dependencies:
 
   cupertino_icons: ^1.0.2
 
+  #NETWORK REQUESTS
+  http: ^0.13.4 # http requests
+
+  #DEPENDENCY INJECTION
+  injectable: ^2.1.1 #DI annotations
+  get_it: ^7.2.0 #DI generator
+
+  #ARCHITECTURE Redux
+  provider: ^6.0.2
+  redux: ^5.0.0 #Base Redux plugin
+  flutter_redux: ^0.10.0 #Easy way work using Redux plugin
+  redux_epics: ^0.15.1 #Easy way work with redux epics
+
+  #CODEGEN
+  built_value: ^8.6.1 #Base codegen Immutable class plugin
+  built_collection: ^5.1.1 #Base codegen Immutable collections plugin
+
+  universal_platform: ^1.0.0+1
+
+  mockito: ^5.1.0
+
+  logger: ^1.1.0
+
+  rxdart: ^0.27.3
+  uuid: ^3.0.6 #for isolate manager
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   flutter_lints: ^2.0.1
-flutter:
 
+  build_runner: ^2.4.4
+  built_value_generator: ^8.6.1
+  injectable_generator: ^2.1.5
+  build_web_compilers: ^4.0.3
+
+
+flutter:
   uses-material-design: true
+  assets:
+    - assets/
+    - assets/images/ball.png
+    - assets/images/normal_shadow_1.png
+    - assets/images/error_shadow_1.png
+    - assets/images/normal_shadow_2.png
+    - assets/images/error_shadow_2.png

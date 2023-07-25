@@ -1,25 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:surf_practice_magic_ball/screen/magic_ball_screen.dart';
+import 'package:surf_practice_magic_ball/app.dart';
+import 'package:surf_practice_magic_ball/app_starter.dart';
+import 'package:surf_practice_magic_ball/environments/environments.dart';
+import 'package:surf_practice_magic_ball/injection.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  // Собрать зависимости
+  await configureInjectionAsync(Environments.IS_PRODUCTION ? Env.prod : Env.dev);
 
-  runApp(const MyApp());
-}
+  // Подготовка к запуску приложения (инициализация хранилища)
+  await startApp();
 
-/// App,s main widget.
-class MyApp extends StatelessWidget {
-  /// Constructor for [MyApp].
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MagicBallScreen(),
-    );
-  }
+  // Запуск приложения
+  runApp(const App());
 }
